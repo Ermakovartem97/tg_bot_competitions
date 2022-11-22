@@ -122,7 +122,6 @@ def take_all_competitions():
 
 def check_person_in_competition(competition_name, person_tg):
     all_persons = take_all_persons(competition_name)
-    print(all_persons)
     if person_tg in all_persons['person_tg']:
         person_in_competition = True
     else:
@@ -153,5 +152,4 @@ if __name__ == '__main__':
     all_games_df = take_all_games(name_conpetition)
     #print(all_games_df)
     all_competitions = take_all_competitions()
-    print(all_competitions)
     take_team_composition(name_conpetition, 1)
