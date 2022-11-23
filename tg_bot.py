@@ -3,7 +3,7 @@ from telebot import types
 
 from managment_bd import take_all_competitions
 
-token = '5879973344:AAFTZ6RU-reeZqdzTE2NOQvNA9Cl3KEUbb4'
+token = ''
 bot = telebot.TeleBot(token)
 
 
