@@ -53,7 +53,7 @@ def create_new_conpetition(name):
 def insert_person(name_conpetition, data):
     con = sl.connect(f'{db_path}\{name_conpetition}.db')
     sql_insert_person = """
-    INSERT INTO PERSONS (full_name, company_name, person_tg) values (?, ?)
+    INSERT INTO PERSONS (full_name, company_name, person_tg) values (?, ?, ?)
     """
     with con:
         con.executemany(sql_insert_person, data)
@@ -122,7 +122,7 @@ def take_all_competitions():
 
 def check_person_in_competition(competition_name, person_tg):
     all_persons = take_all_persons(competition_name)
-    if person_tg in all_persons['person_tg']:
+    if person_tg in all_persons['person_tg'].tolist():
         person_in_competition = True
     else:
         person_in_competition = False
